@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django-polls',
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,9 +51,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mysite.urls'
-
-# 这个变量默认是没有的，建议在默认的TEMPLAETS变量前面一行定义
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 TEMPLATES = [
     {
